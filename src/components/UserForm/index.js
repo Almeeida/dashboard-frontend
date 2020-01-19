@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 
 import './style.css';
 
+/**
+ * The user form functions
+ * @param {Function} options.onSubmit The function that gets ran whenever the user submits their credentials.
+ * @return {HTMLFormElement} The form.
+ */
 function UserForm({ onSubmit }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
+  /**
+   * What handles the submit event.
+   * @param {Event} e The event whenever the user submits their credentials.
+   * @return {Promise<void>}
+   */
   async function handleSubmit(e) {
     e.preventDefault();
 
